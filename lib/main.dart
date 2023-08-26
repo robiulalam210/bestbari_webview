@@ -1,3 +1,4 @@
+import 'package:bestbari_webview/splah.dart';
 import 'package:bestbari_webview/webview.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: WebViewPage(),
+      home: SplahScrren(),
     );
   }
 }
