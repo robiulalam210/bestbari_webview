@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+
 class WebViewPage extends StatefulWidget {
   const WebViewPage({super.key});
 
@@ -9,6 +10,8 @@ class WebViewPage extends StatefulWidget {
 
 class _WebViewPageState extends State<WebViewPage> {
   late final WebViewController controller;
+  double progressData = 0;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -19,6 +22,11 @@ class _WebViewPageState extends State<WebViewPage> {
       ..setNavigationDelegate(
         NavigationDelegate(
           onProgress: (int progress) {
+            setState(() {
+              progressData = progress / 100;
+              print("aaaaaaaaaaa$progress");
+            });
+
             // Update loading bar.
           },
           onPageStarted: (String url) {},
@@ -34,11 +42,19 @@ class _WebViewPageState extends State<WebViewPage> {
       )
       ..loadRequest(Uri.parse('https://bestbari.com/'));
   }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: WebViewWidget(controller: controller),
+        body: progressData < 1
+            ? Center(
+                child: CircularProgressIndicator(
+                  value: progressData,
+                  color: Colors.red,
+                ),
+              )
+            : WebViewWidget(controller: controller),
       ),
     );
   }

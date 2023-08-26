@@ -15,7 +15,7 @@ class _SplahScrrenState extends State<SplahScrren> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(
-      seconds: 5,
+      seconds: 0,
     )).then((value) {
       //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage()));
       Navigator.of(context).pushAndRemoveUntil(
@@ -28,26 +28,29 @@ class _SplahScrrenState extends State<SplahScrren> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      //backgroundColor: Color(0xff071D31),
+      backgroundColor: Color(0xffffffff),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset("images/fitnass.png")),
+                child: Image.asset(
+                  "assets/images/app.png",
+                 // height: MediaQuery.of(context).size.height * 0.40,
+                )),
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
+             Text(
+              "Bestbari".toString().toUpperCase(),
+              style: TextStyle(
+                fontSize: 40,color: Colors.black,fontWeight: FontWeight.w600
+              ),
+            )
 
-          // SpinKitRotatingCircle(
-          //   color: Colors.white,
-          //   size: 50.0,
-          // ),
-          //   SpinKitSpinningLines(
-          //     color: Colors.orange,
-          //     size: 80.0,
-          //   )
+
           ],
         ),
       ),
