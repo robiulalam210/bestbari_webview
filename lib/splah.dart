@@ -15,7 +15,7 @@ class _SplahScrrenState extends State<SplahScrren> {
     // TODO: implement initState
     super.initState();
     Future.delayed(Duration(
-      seconds: 0,
+      seconds: 2,
     )).then((value) {
       //Navigator.of(context).push(MaterialPageRoute(builder: (context)=>MyHomePage()));
       Navigator.of(context).pushAndRemoveUntil(
