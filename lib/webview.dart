@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:webview_flutter_wkwebview/webview_flutter_wkwebview.dart';
 
 class WebViewPage extends StatefulWidget {
   const WebViewPage({super.key});
@@ -16,6 +17,7 @@ class _WebViewPageState extends State<WebViewPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
+
     controller = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setBackgroundColor(const Color(0x00000000))
@@ -51,9 +53,9 @@ class _WebViewPageState extends State<WebViewPage> {
             ? Center(
                 child: Stack(
                   children: [
-                    CircleAvatar(
-                      radius: 45,
-                        backgroundImage:AssetImage(
+                    const CircleAvatar(
+                        radius: 45,
+                        backgroundImage: AssetImage(
                           "assets/images/app.png",
 
                           // height: MediaQuery.of(context).size.height * 0.40,

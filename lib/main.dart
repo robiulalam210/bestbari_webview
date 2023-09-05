@@ -1,5 +1,4 @@
 import 'package:bestbari_webview/splah.dart';
-import 'package:bestbari_webview/webview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +15,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'BestBari',
       theme: ThemeData(
-
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -27,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: SplahScrren(),
+      home: const SplahScrren(),
     );
   }
 }
