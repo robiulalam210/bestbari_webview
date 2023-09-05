@@ -49,9 +49,26 @@ class _WebViewPageState extends State<WebViewPage> {
       child: Scaffold(
         body: progressData < 1
             ? Center(
-                child: CircularProgressIndicator(
-                  value: progressData,
-                  color: Colors.red,
+                child: Stack(
+                  children: [
+                    CircleAvatar(
+                      radius: 45,
+                        backgroundImage:AssetImage(
+                          "assets/images/app.png",
+
+                          // height: MediaQuery.of(context).size.height * 0.40,
+                        )),
+                    Positioned(
+                      top: 0,
+                      bottom: 0,
+                      right: 0,
+                      left: 0,
+                      child: CircularProgressIndicator(
+                        value: progressData,
+                        color: Colors.red,
+                      ),
+                    ),
+                  ],
                 ),
               )
             : WebViewWidget(controller: controller),
